@@ -1,0 +1,2 @@
+number-service.min=101
+number-service.max=1000
