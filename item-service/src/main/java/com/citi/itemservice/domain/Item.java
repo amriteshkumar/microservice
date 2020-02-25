@@ -4,12 +4,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(propOrder = {"code","name","price"})
+@XmlType(propOrder = {"code","name","price","port"})
 public class Item {
 
 	private Integer code;
 	private String name;
 	private Double price;
+	private Integer port;
 	
 	public Item() {
 		super();
@@ -38,6 +39,11 @@ public class Item {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
+	public Integer getPort() {
+		return port;
+	}
+	public void setPort(Integer port) {
+		this.port = port;
+	}
 	
 }

@@ -4,12 +4,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(propOrder = {"itemCode", "itemName", "totalAmount"})
+@XmlType(propOrder = {"itemCode", "itemName", "totalAmount","port"})
 public class ItemOrder {
 
 	private Integer itemCode;
 	private String itemName;
 	private Double totalAmount;
+	private Integer port;
 	
 	public ItemOrder() {
 		super();
@@ -38,6 +39,11 @@ public class ItemOrder {
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-	
+	public Integer getPort() {
+		return port;
+	}
+	public void setPort(Integer port) {
+		this.port = port;
+	}
 	
 }

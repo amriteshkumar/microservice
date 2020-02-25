@@ -26,7 +26,9 @@ public class ItemOrderService {
 	public ItemOrder getItemOrderDetailsViaFeignProxy(Integer itemCode, Integer quantity) {
 		Item item  = itemProxy.getItemDetails(itemCode);
 		Double totalAmount = quantity * item.getPrice();
-		return new ItemOrder(itemCode, item.getName(), totalAmount);
+		ItemOrder itemOrder = new ItemOrder(itemCode, item.getName(), totalAmount);
+		itemOrder.setPort(item.getPort());
+		return itemOrder;
 	}
 	
 }
