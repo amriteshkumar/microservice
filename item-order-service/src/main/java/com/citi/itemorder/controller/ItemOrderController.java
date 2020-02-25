@@ -25,4 +25,12 @@ public class ItemOrderController {
 		ItemOrder order=service.getItemOrderDetails(code, quantity);
 		return new ResponseEntity<>(order,HttpStatus.OK);
 	}
+	
+
+	@GetMapping(value="/feign/{code}/qty/{quantity}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<ItemOrder> getItemOrderViaFeign(@PathVariable("code")int code,@PathVariable("quantity")int quantity)
+	{
+		ItemOrder order=service.getItemOrderDetailsViaFeignProxy(code, quantity);
+		return new ResponseEntity<>(order,HttpStatus.OK);
+	}
 }
