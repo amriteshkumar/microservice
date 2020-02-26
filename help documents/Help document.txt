@@ -1,0 +1,6 @@
+https://github.com/mehul8055/micro-service
+
+http://localhost:9411/zipkin
+
+Need RabbitMq & Zipkin-server to test Centralized Logging
+erlang is a package required by rabbitmq as a dependency
