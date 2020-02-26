@@ -6,6 +6,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import brave.sampler.Sampler;
+
 @SpringBootApplication
 @EnableFeignClients
 public class ItemOrderServiceApplication {
@@ -17,5 +19,10 @@ public class ItemOrderServiceApplication {
 	@Bean
 	public RestTemplate createRestTemplate() {
 		return new RestTemplate();
+	}
+	
+	@Bean
+	public Sampler getSampler() {
+		return Sampler.ALWAYS_SAMPLE;
 	}
 }
