@@ -1,0 +1,35 @@
+Client 
+ -> JwtRequestFilter 
+  -> JWTAuthenticationController 
+   -> AuthenticationManager 
+    -> JwtUserDetail 
+     -> JwtTokenUtil 
+      -> HelloWorldController
+
+
+First URL : 
+	Request  
+	POST : localhost:8080/authenticate
+	Headers :
+	Content-Type : application/json
+	
+	Body
+	{
+		"username":"javainuse"
+		"password":"password"
+	} 
+	
+	Response : 
+	
+	{
+	    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1ODI3MzQ3OTcsImlhdCI6MTU4MjcxNjc5N30.k2lDiKGV-tEZDQeCnXCLSctJ6esLgmPb0WrU5IctSciPqTLfbUe5Tn30MNGiSHplEhfAQUme_-UAfFClGzUgtQ"
+	}
+
+Second URL : 
+	Request
+	GET : localhost:8080/hello
+	Headers : 
+		Authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1ODI3MzQ3OTcsImlhdCI6MTU4MjcxNjc5N30.k2lDiKGV-tEZDQeCnXCLSctJ6esLgmPb0WrU5IctSciPqTLfbUe5Tn30MNGiSHplEhfAQUme_-UAfFClGzUgtQ
+
+	Respnse 
+		hello world		
